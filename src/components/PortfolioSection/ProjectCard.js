@@ -1,37 +1,64 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions } from '@mui/material';
+import React from 'react';
+import { IconButton, Box, } from '@mui/material';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import CodeIcon from '@mui/icons-material/Code';
 
-const ProjectCard = () => {
+const ProjectCard = ({ projectImage, projectCodeLink, projectLiveLink, projectAltText }) => {
+
+
     return (
-        //TODO make this responsive
-        <Card sx={{ maxWidth: '450px' }}>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="140"
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    alt="green iguana"
-                />
-                <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Lizard
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000
-                        species, ranging across all continents except Antarctica
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                    Share
-                </Button>
-            </CardActions>
-        </Card >
+        <Box sx={{
+            maxWidth: '450px',
+            position: 'relative',
+            margin: '1rem'
+        }}>
+            <Box component="img" src={projectImage} alt={projectAltText} sx={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '1rem', }} />
+            <Box
+                sx={{
+                    backgroundColor: '#FCFDFD',
+                    borderRadius: '1rem',
+                    opacity: 0,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'space-around',
+                    alignItems: 'center',
+                    transition: 'opacity 0.5s ease',
+                    border: '2px solid #542B2C',
+                    '&:hover': {
+                        opacity: 1,
+                    },
+                }}
+            >
+                <IconButton
+                    aria-label="View Live Project"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(projectLiveLink, '_blank')
+                    }}
+                >
+                    <VisibilityIcon sx={{
+                        color: '#542B2C',
+                        fontSize: '5rem'
+                    }} />
+                </IconButton>
+                {projectCodeLink && <IconButton
+                    aria-label="View Code"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        window.open(projectCodeLink, '_blank')
+                    }}
+                >
+                    <CodeIcon sx={{
+                        color: '#542B2C',
+                        fontSize: '5rem'
+                    }} />
+                </IconButton>}
+            </Box>
+        </Box >
     );
 }
 

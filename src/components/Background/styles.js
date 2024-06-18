@@ -1,22 +1,11 @@
 import { styled } from "@mui/system";
 
-export const ParallaxContainer = styled("div")({
-    position: "relative",
-    height: "100vh",
-    overflow: "hidden",
-});
-
 export const ParallaxBackground = styled("div")({
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
+    backgroundImage: "url('../img/aletsch-arena2.png')",
+    backgroundPosition: "center",
+    backgroundRepeat: 'no-repeat',
     backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
     backgroundAttachment: "fixed",
-    zIndex: -1,
-    transform: "translateZ(0)",
 });
 
 export const Content = styled("div")(({ theme }) => ({

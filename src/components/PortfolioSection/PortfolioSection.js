@@ -1,25 +1,142 @@
-import React from "react";
+import React, { useState } from "react";
 import ProjectCard from "./ProjectCard"
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Tabs, Tab } from "@mui/material";
+
+const projects = [
+    {
+        id: '1',
+        projectImage: 'img/jubilee-austen.png',
+        projectCodeLink: 'https://github.com/iremkenar/Jubilee-Austen',
+        projectLiveLink: 'https://iremkenar.github.io/Jubilee-Austen/',
+        projectAltText: 'jubilee austen website thumbnail',
+        mainTechnologyType: 'UI',
+    },
+    {
+        id: '2',
+        projectImage: 'img/unplugged.png',
+        projectCodeLink: 'https://github.com/iremkenar/unplugged-2020-responsive-website',
+        projectLiveLink: 'https://iremkenar.github.io/unplugged-2020-responsive-website/',
+        projectAltText: 'unplugged website thumbnail',
+        mainTechnologyType: 'UI',
+    },
+    {
+        id: '3',
+        projectImage: 'img/magic-8-ball.png',
+        projectCodeLink: 'https://github.com/iremkenar/magic-8-ball-project',
+        projectLiveLink: 'https://iremkenar.github.io/magic-8-ball-project/',
+        projectAltText: 'magic 8 ball thumbnail',
+        mainTechnologyType: 'JavaScript',
+
+    },
+    {
+        id: '4',
+        projectImage: 'img/dorothy-delong.png',
+        projectCodeLink: null,
+        projectLiveLink: 'https://xd.adobe.com/view/191c1984-91a1-4fb3-7321-e1cf89515628-6f2d/',
+        projectAltText: 'dorothy design thumbnail',
+        mainTechnologyType: 'UI',
+
+    },
+    {
+        id: '5',
+        projectImage: 'img/visionboard.png',
+        projectCodeLink: 'https://github.com/iremkenar/Vision-Board-Project',
+        projectLiveLink: 'https://iremkenar.github.io/Vision-Board-Project/',
+        projectAltText: 'vision board thumbnail',
+        mainTechnologyType: 'UI',
+
+    },
+    {
+        id: '6',
+        projectImage: 'img/lolcat-clock.png',
+        projectCodeLink: 'https://github.com/iremkenar/lolcat-clock-project',
+        projectLiveLink: 'https://iremkenar.github.io/lolcat-clock-project/',
+        projectAltText: 'lolcat clock thumbnail',
+        mainTechnologyType: 'JavaScript',
+
+    },
+    {
+        id: '7',
+        projectImage: 'img/us-election-map.png',
+        projectCodeLink: 'https://github.com/iremkenar/election-map',
+        projectLiveLink: 'https://iremkenar.github.io/election-map/',
+        projectAltText: 'election map thumbnail',
+        mainTechnologyType: 'JavaScript',
+
+    },
+    {
+        id: '8',
+        projectImage: 'img/rogue-pickings.png',
+        projectCodeLink: 'https://github.com/iremkenar/206-making-rogue-pickings-responsible',
+        projectLiveLink: 'https://iremkenar.github.io/206-making-rogue-pickings-responsible/',
+        projectAltText: 'rogue picking website thumbnail',
+        mainTechnologyType: 'UI',
+
+    },
+    {
+        id: '9',
+        projectImage: 'img/meetup-thumbnail.png',
+        projectCodeLink: 'https://github.com/irem-kenar/Next.js-meetup',
+        projectLiveLink: 'next-js-meetup-1.vercel.app/',
+        projectAltText: 'meetup application thumbnail',
+        mainTechnologyType: 'React',
+
+    },
+    {
+        id: '10',
+        projectImage: 'img/tailwindcss-thumbnail.png',
+        projectCodeLink: 'https://github.com/irem-kenar/React-hook-form-yup-tailwindcss',
+        projectLiveLink: 'https://irem-kenar.github.io/React-hook-form-yup-tailwindcss/',
+        projectAltText: 'tailwindcss thumbnail',
+        mainTechnologyType: 'React',
+    },
+]
+
 
 const PortfolioSection = () => {
+
+    const [selectedTab, setSelectedTab] = useState(0);
+    const tabTechnologies = ['All', 'React', 'JavaScript', 'UI'];
+
+    const handleTabChange = (_, newValue) => {
+        setSelectedTab(newValue);
+    };
+    const filteredProjects = selectedTab === 0 ? projects : projects.filter(project => project.mainTechnologyType === tabTechnologies[selectedTab]);
+
     return (
-        <Box sx={{ width: '100%' }}>
-            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProjectCard />
-                </Grid>
-                <Grid item xs={6}>
-                    <ProjectCard />
-                </Grid>
+        <Box sx={{ marginTop: '200px', backgroundColor: 'rgba(255, 255, 255, 0.75)', minHeight: '500px' }}>
+            <Tabs
+                value={selectedTab}
+                onChange={handleTabChange}
+                centered
+                sx={{ marginY: '1rem' }}
+            >
+                {tabTechnologies.map((tab) => <Tab sx={{ fontSize: '1.25rem' }} label={tab} />)}
+            </Tabs>
+            <Grid
+                container
+                rowSpacing={1}
+            >
+                {filteredProjects.map((project) => {
+                    return (<Grid item xs={4} sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }} >
+                        <ProjectCard
+                            key={project.id}
+                            projectImage={project.projectImage}
+                            projectCodeLink={project.projectCodeLink}
+                            projectLiveLink={project.projectLiveLink}
+                            projectAltText={project.projectAltText}
+                        />
+                    </Grid>
+                    )
+                }
+                )}
+
             </Grid>
-        </Box>
+        </Box >
     )
 }
 
