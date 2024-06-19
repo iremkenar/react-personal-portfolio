@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Box, } from '@mui/material';
+import { IconButton, Box, Tooltip } from '@mui/material';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import CodeIcon from '@mui/icons-material/Code';
 
@@ -12,7 +12,7 @@ const ProjectCard = ({ projectImage, projectCodeLink, projectLiveLink, projectAl
             position: 'relative',
             margin: '1rem'
         }}>
-            <Box component="img" src={projectImage} alt={projectAltText} sx={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '1rem', }} />
+            <Box component="img" src={projectImage} alt={projectAltText} sx={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '1rem', }} />
             <Box
                 sx={{
                     backgroundColor: '#FCFDFD',
@@ -33,18 +33,20 @@ const ProjectCard = ({ projectImage, projectCodeLink, projectLiveLink, projectAl
                     },
                 }}
             >
-                <IconButton
-                    aria-label="View Live Project"
-                    onClick={(e) => {
-                        e.stopPropagation();
-                        window.open(projectLiveLink, '_blank')
-                    }}
-                >
-                    <VisibilityIcon sx={{
-                        color: '#542B2C',
-                        fontSize: '5rem'
-                    }} />
-                </IconButton>
+                <Tooltip title="See the site">
+                    <IconButton
+                        aria-label="View Live Project"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(projectLiveLink, '_blank')
+                        }}
+                    >
+                        <VisibilityIcon sx={{
+                            color: '#542B2C',
+                            fontSize: '5rem'
+                        }} />
+                    </IconButton>
+                </Tooltip>
                 {projectCodeLink && <IconButton
                     aria-label="View Code"
                     onClick={(e) => {
@@ -52,10 +54,12 @@ const ProjectCard = ({ projectImage, projectCodeLink, projectLiveLink, projectAl
                         window.open(projectCodeLink, '_blank')
                     }}
                 >
-                    <CodeIcon sx={{
-                        color: '#542B2C',
-                        fontSize: '5rem'
-                    }} />
+                    <Tooltip title="See the code">
+                        <CodeIcon sx={{
+                            color: '#542B2C',
+                            fontSize: '5rem'
+                        }} />
+                    </Tooltip>
                 </IconButton>}
             </Box>
         </Box >

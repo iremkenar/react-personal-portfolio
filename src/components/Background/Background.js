@@ -1,23 +1,23 @@
 import React from 'react';
 import { Container } from "@mui/material";
-import { ParallaxBackground, Content } from './styles';
-import NavigationButtons from '../NavigationButtons/NavigationButtons';
-import Header from '../Header/Header';
+import { ParallaxBackground } from './styles';
+import HeaderSection from '../HeaderSection/HeaderSection';
 import PortfolioSection from '../PortfolioSection/PortfolioSection';
 import AboutSection from '../AboutSection/AboutSection';
+import ContactSection from '../ContactSection/ContactSection';
+import Footer from '../Footer/Footer';
 
 const Background = () => {
 
   return (
     <ParallaxBackground>
       <Container maxWidth={false} disableGutters>
-        <Content sx={{ width: '60%', margin: '0 auto' }}>
-          <Header />
-          <NavigationButtons />
-        </Content>
+        <HeaderSection />
         <PortfolioSection />
         <AboutSection />
+        <ContactSection />
       </Container>
+      <Footer />
     </ParallaxBackground>
   );
 };

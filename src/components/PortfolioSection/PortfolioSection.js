@@ -104,7 +104,7 @@ const PortfolioSection = () => {
     const filteredProjects = selectedTab === 0 ? projects : projects.filter(project => project.mainTechnologyType === tabTechnologies[selectedTab]);
 
     return (
-        <Box sx={{ marginTop: '200px', backgroundColor: 'rgba(255, 255, 255, 0.75)', minHeight: '500px' }}>
+        <Box id='portfolio-section' sx={{ backgroundColor: 'rgba(255, 255, 255, 0.85)', minHeight: '500px' }}>
             <Tabs
                 value={selectedTab}
                 onChange={handleTabChange}

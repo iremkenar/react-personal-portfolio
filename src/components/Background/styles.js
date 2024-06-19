@@ -8,9 +8,3 @@ export const ParallaxBackground = styled("div")({
     backgroundAttachment: "fixed",
 });
 
-export const Content = styled("div")(({ theme }) => ({
-    paddingTop: theme.spacing(6),
-    paddingBottom: theme.spacing(6),
-    textAlign: "center",
-    color: theme.palette.common.white,
-}));
