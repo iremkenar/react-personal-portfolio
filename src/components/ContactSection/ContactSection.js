@@ -7,7 +7,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const ContactSection = () => {
     return (
-        <Box id='contact-section' sx={{ marginTop: 10, height: '90vh' }}>
+        <Box id='contact-section' sx={{ marginTop: 6, height: '90vh' }}>
             <Box sx={{ margin: '0 auto', backgroundColor: '#542B2C', color: 'white', width: '30%', borderRadius: '1rem', marginBottom: 4, paddingBottom: '0.5rem' }}>
                 <Typography sx={{ fontWeight: '600', textAlign: 'center', }} variant='h4'>Contact</Typography>
             </Box>

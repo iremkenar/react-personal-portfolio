@@ -10,10 +10,12 @@ const ScrollArrow = () => {
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     };
+
     return (
         <Box sx={{
-            height: '42vh',
-            display: 'flex', justifyContent: 'center', alignItems: 'end'
+            position: 'absolute',
+            bottom: '10%',
+            left: '47%'
         }}>
             <IconButton sx={{ border: '3px solid white', backgroundColor: '#332425' }} onClick={() => scrollToSection('portfolio-section')}>
                 <ArrowDownwardIcon sx={{ fontSize: '2rem', color: 'white' }} />

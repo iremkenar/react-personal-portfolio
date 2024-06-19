@@ -29,7 +29,7 @@ const HeaderSection = () => {
     }, [words.length]);
 
     return (
-        <Content sx={{ width: '50%', margin: '0 auto', height: '100vh' }}>
+        <Content sx={{ width: '50%', margin: '0 auto', height: '100vh', position: 'relative' }}>
             <Box sx={{
                 display: 'flex',
                 justifyContent: 'center',

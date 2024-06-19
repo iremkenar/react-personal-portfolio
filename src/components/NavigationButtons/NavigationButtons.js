@@ -4,6 +4,7 @@ import { Button, Box } from "@mui/material";
 
 const buttonStyles = {
     fontSize: '1.25rem',
+    width: '160px',
     fontWeight: '700',
     backgroundColor: '#332425',
     '&:hover': {
