@@ -30,10 +30,10 @@ const ContactSection = () => {
                 <Tooltip arrow='top' title={
                     <>
                         <Typography variant='h5'>
-                            Pre-Work
+                            Pre-Work & Post-Work
                         </Typography>
                         <Typography>
-                            This account showcases my early work, personal projects, and the initial learning phase of my programming journey
+                            This account showcases a blend of early personal projects from my initial learning phase and more advanced, independently completed work, including guided projects aimed at further developing my skills after starting my professional career
                         </Typography>
                     </>
                 }>
@@ -43,31 +43,6 @@ const ContactSection = () => {
                             height: '4rem',
                             backgroundColor: '#542B2C',
                             color: '#ffffff',
-                            '&:hover': {
-                                backgroundColor: '#3e2021',
-                            },
-                        }}>
-                            <GitHubIcon sx={{
-                                fontSize: '2.5rem'
-                            }} />
-                        </IconButton>
-                    </Link>
-                </Tooltip>
-                <Tooltip arrow='top' title={
-                    <>
-                        <Typography variant='h5'>
-                            Post-Work
-                        </Typography>
-                        <Typography>
-                            This account contains guided projects and more advanced work that I completed independently to further my skills after I started working                        </Typography>
-                    </>
-                }>
-                    <Link href="https://github.com/irem-kenar" target="_blank" rel="noopener" underline="none">
-                        <IconButton sx={{
-                            width: '4rem',
-                            height: '4rem',
-                            backgroundColor: '#542B2C',
-                            color: '#C2D4EF',
                             '&:hover': {
                                 backgroundColor: '#3e2021',
                             },
