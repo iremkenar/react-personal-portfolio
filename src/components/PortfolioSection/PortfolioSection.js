@@ -90,6 +90,30 @@ const projects = [
         projectAltText: 'tailwindcss thumbnail',
         mainTechnologyType: 'React',
     },
+    {
+        id: '11',
+        projectImage: 'img/react-expense-tracker.png',
+        projectCodeLink: 'https://github.com/iremkenar/React-Expense-Tracker',
+        projectLiveLink: 'https://iremkenar.github.io/React-Expense-Tracker/',
+        projectAltText: 'expense tracker thumbnail',
+        mainTechnologyType: 'React',
+    },
+    {
+        id: '12',
+        projectImage: 'img/bankist-app.png',
+        projectCodeLink: 'https://github.com/iremkenar/bankistApp',
+        projectLiveLink: 'https://iremkenar.github.io/bankistApp/',
+        projectAltText: 'bankist app thumbnail',
+        mainTechnologyType: 'JavaScript',
+    },
+    {
+        id: '13',
+        projectImage: 'img/word-game.png',
+        projectCodeLink: 'https://github.com/iremkenar/wordGame',
+        projectLiveLink: 'https://iremkenar.github.io/wordGame/',
+        projectAltText: 'word game thumbnail',
+        mainTechnologyType: 'JavaScript',
+    },
 ]
 
 
