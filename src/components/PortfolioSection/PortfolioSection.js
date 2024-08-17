@@ -68,7 +68,7 @@ const projects = [
         id: '8',
         projectImage: 'img/rogue-pickings.png',
         projectCodeLink: 'https://github.com/iremkenar/206-making-rogue-pickings-responsible',
-        projectLiveLink: 'https://iremkenar.github.io/206-making-rogue-pickings-responsible/',
+        projectLiveLink: 'https://iremkenar.github.io/Rogue-Pickings/',
         projectAltText: 'rogue picking website thumbnail',
         mainTechnologyType: 'UI',
 
@@ -76,8 +76,8 @@ const projects = [
     {
         id: '9',
         projectImage: 'img/meetup-thumbnail.png',
-        projectCodeLink: 'https://github.com/irem-kenar/Next.js-meetup',
-        projectLiveLink: 'next-js-meetup-1.vercel.app/',
+        projectCodeLink: 'https://github.com/iremkenar/Next.js-meetup',
+        projectLiveLink: 'https://next-js-meetup-1.vercel.app/',
         projectAltText: 'meetup application thumbnail',
         mainTechnologyType: 'React',
 
@@ -85,8 +85,8 @@ const projects = [
     {
         id: '10',
         projectImage: 'img/tailwindcss-thumbnail.png',
-        projectCodeLink: 'https://github.com/irem-kenar/React-hook-form-yup-tailwindcss',
-        projectLiveLink: 'https://irem-kenar.github.io/React-hook-form-yup-tailwindcss/',
+        projectCodeLink: 'https://github.com/iremkenar/React-hook-form-yup-tailwindcss',
+        projectLiveLink: 'https://iremkenar.github.io/React-hook-form-yup-tailwindcss/',
         projectAltText: 'tailwindcss thumbnail',
         mainTechnologyType: 'React',
     },
